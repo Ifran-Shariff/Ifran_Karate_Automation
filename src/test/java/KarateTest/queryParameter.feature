@@ -14,3 +14,4 @@ Feature: Testing parameters
       When method get
       Then status 200
       Then print response
+      Then print authInfo.accessToken
