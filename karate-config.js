@@ -21,7 +21,7 @@ function fn() {
     karate.configure('readTimeout', 5000);
 
     //callsigle()
-    var result = karate.callSingle('classpath:KarateTest/callsingle.feature');
-    config.authInfo = result;
+    // var result = karate.callSingle('classpath:KarateTest/callsingle.feature');
+    // config.authInfo = result;
     return config;
 }

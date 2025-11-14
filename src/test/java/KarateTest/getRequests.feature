@@ -1,5 +1,10 @@
 Feature: This helps to check the functionality
 
+  Background:
+    #this will call callOnce.feature and execute it before executing each scenarios from getRequests.feature
+    * callonce read("classpath:KarateTest/callOnce.feature")
+    Given print 'Check functionality of callonce'
+
   Scenario: Get Request
   Given url 'http://gorest.co.in/public/v2/users'
     When method get
@@ -25,7 +30,7 @@ Feature: This helps to check the functionality
 
     Scenario: passing the id at the end of URL to call specific details
     Given url baseURL+'public/v2/users'
-      And path '7583038'
+      And path '8229480'
       When method get
       Then status 200
       Then print response
