@@ -23,20 +23,29 @@ Feature: Check assetions
 #    * match var1 != var2
 #    Then print "not matched"
 
-  Scenario Outline: validating the response with the example output given
-    Given url 'http://gorest.co.in/public/v2/users'
-       And param id = <id>
-       When method get
-       Then status 200
-        * match response[0].id == <id>
-        * match response[0].name == "<name>"
-        * match response[0].email == "<email>"
-        * match response[0].gender == "<gender>"
-        * match response[0].status == "<status>"
+  #JSON assertion - validating with the data give in json file resultofAssertionfeature
+  Scenario: JSON validation
+  Given url 'http://reqres.in/api/users'
+    And param page = 2
+    When method get
+    * print response
+    Then status 200
+    * match response.data[0].id == expectedoutput.data[0].id
 
-    Examples:
-    |id     |name           |email                        |gender|status|
-    |8229425|Chandrani Ahuja|chandrani_ahuja@gorczany.test|female|active|
+#  Scenario Outline: validating the response with the example output given
+#    Given url 'http://gorest.co.in/public/v2/users'
+#       And param id = <id>
+#       When method get
+#       Then status 200
+#        * match response[0].id == <id>
+#        * match response[0].name == "<name>"
+#        * match response[0].email == "<email>"
+#        * match response[0].gender == "<gender>"
+#        * match response[0].status == "<status>"
+#
+#    Examples:
+#    |id     |name           |email                        |gender|status|
+#    |8229425|Chandrani Ahuja|chandrani_ahuja@gorczany.test|female|active|
 
   #Scenario: Validating schema or datatype of the fields
 #    Given url 'http://gorest.co.in/public/v2/users'
