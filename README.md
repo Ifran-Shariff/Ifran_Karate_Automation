@@ -51,6 +51,9 @@ Answer: Add dependencies in pom.xml:
 
 Q3: How do you write a simple API test?
 
+```markdown
+```gherkin
+
 Feature: Sample API Test
 
 Scenario: Get user details
