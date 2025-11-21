@@ -66,11 +66,15 @@ Scenario: Get user details
   
   And match response.name == 'Ifran'
 
+---
+
   Q4: How do you perform data-driven testing?
 
   Use Examples: or external JSON/CSV:
 
-Scenario Outline: Validate login
+```
+
+  Scenario Outline: Validate login
 
   Given url 'https://api.example.com/login'
   
@@ -87,6 +91,8 @@ Examples:
   | ifran  | test123|
   
   | admin  | admin@1|
+
+  ---
 
   
 
