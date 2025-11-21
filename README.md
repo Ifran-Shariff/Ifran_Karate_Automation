@@ -36,21 +36,57 @@ Answer: Karate is a DSL-based framework for API, UI, and performance testing. It
 Q2: How do you set up a Karate project with Maven?
 
 Answer: Add dependencies in pom.xml:
+
 <dependency>
+
   <groupId>com.intuit.karate</groupId>
+  
   <artifactId>karate-junit5</artifactId>
+  
   <version>1.4.0</version>
+  
   <scope>test</scope>
+  
 </dependency>
 
 Q3: How do you write a simple API test?
 
 Feature: Sample API Test
+
 Scenario: Get user details
+
   Given url 'https://api.example.com/users/1'
+  
   When method get
+  
   Then status 200
+  
   And match response.name == 'Ifran'
+
+  Q4: How do you perform data-driven testing?
+
+  Use Examples: or external JSON/CSV:
+
+Scenario Outline: Validate login
+
+  Given url 'https://api.example.com/login'
+  
+  And request { username: '<user>', password: '<pass>' }
+  
+  When method post
+  
+  Then status 200
+
+Examples:
+
+  | user   | pass   |
+  
+  | ifran  | test123|
+  
+  | admin  | admin@1|
+
+  
+
 
 
 
