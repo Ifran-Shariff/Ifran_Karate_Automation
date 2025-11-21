@@ -43,6 +43,15 @@ Answer: Add dependencies in pom.xml:
   <scope>test</scope>
 </dependency>
 
+Q3: How do you write a simple API test?
+
+Feature: Sample API Test
+Scenario: Get user details
+  Given url 'https://api.example.com/users/1'
+  When method get
+  Then status 200
+  And match response.name == 'Ifran'
+
 
 
 
