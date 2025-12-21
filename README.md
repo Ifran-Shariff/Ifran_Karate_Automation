@@ -32,7 +32,7 @@
  ```
  Scenario Outline: Validate login
  Given url 'https://api.example.com/login'
- And request { username: '', password: '' }
+ And request { username: '<user>', password: '<pass>' }
  When method post
 Then status 200
  Examples:
