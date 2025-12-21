@@ -56,6 +56,8 @@ Then status 200
  * header Authorization = 'Bearer ' + token
  ```
  ### Q8: How do you mock APIs in Karate?
+ A Mock API is a fake or simulated API that behaves like a real one, but does not call the actual backend.
+ It is mainly used for testing, development, and automation when the real API is unavailable, unstable, or expensive to call.
  Karate supports a built-in mock server using feature files:
  ```
  Feature: Mock API
